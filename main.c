@@ -45,17 +45,17 @@ int main()
                 break;
 
             case 4:
-                makeDonation(mat, counts, cap)
+                makeDonation(mat, counts, cap);
                 break;
 
             case 5:
                 break;
             
             default:
-                printf("Opcion invalida\n")
+                printf("Opcion invalida\n");
                 break;
         }
-    } while (option != 5)
+    } while (option != 5);
 
     return 0;
 }
