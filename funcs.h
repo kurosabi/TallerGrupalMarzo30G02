@@ -31,5 +31,5 @@ void updateMatrix(User mat[][MAX_COL], int row, int col);
 
 void displayCounts(int* counts);
 
-void makeDonation(User mat[][MAX_COL], int row, int col);
+void makeDonation(User mat[][MAX_COL], int row, int col, int* counts);
 
