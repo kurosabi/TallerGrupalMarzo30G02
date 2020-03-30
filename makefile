@@ -8,3 +8,4 @@ Funcs: funcs.c funcs.h
 
 Main: main.c funcs.h
 	gcc -c main.c
+  
