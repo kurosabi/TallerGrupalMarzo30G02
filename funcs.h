@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-#define MAX_ROW 100
-#define MAX_COL 100
+#define MAX_CAP 100;
 
 typedef struct User User;
 typedef enum BloodType BloodType;
@@ -27,9 +26,10 @@ struct User
 
 void updateUser(User* u);
 
-void updateMatrix(User mat[][MAX_COL], int row, int col);
+void addUser(User mat[][MAX_CAP], int* groupSizes, int cap);
 
 void displayCounts(int* counts);
 
-void makeDonation(User mat[][MAX_COL], int row, int col, int* counts);
+void searchByType(User mat[][MAX_CAP], int* groupSizes);
 
+void makeDonation(User mat[][MAX_CAP], int *counts, int cap);
