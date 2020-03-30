@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define MAX_ROW 100
+#define MAX_ROW 8
 #define MAX_COL 100
 
 typedef struct User User;
@@ -32,4 +32,6 @@ void updateMatrix(User mat[][MAX_COL], int row, int col);
 void displayCounts(int* counts);
 
 void makeDonation(User mat[][MAX_COL], int row, int col, int* counts);
+
+void displayUsersByBloodType(User mat[][MAX_COL]);
 
