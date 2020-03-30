@@ -1,12 +1,12 @@
 #include "funcs.h"
 
-void menu()
+int menu()
 {
 
     int option = 0;
 
     printf(" Opciones  \n\n");
-    printf("1. Añadir Usuario \n");
+    printf("1. Aniadir Usuario \n");
     printf("2. Cantidades de sangre\n");
     printf("3. Mostrar por grupo de sangre\n");
     printf("4. Hacer donacion\n");
@@ -18,7 +18,7 @@ void menu()
 
 int main()
 {
-    User mat[8][MAX_COL];
+    User mat[8][MAX_CAP];
     int counts[8] = {};
     int groupSizes[8] = {};
 

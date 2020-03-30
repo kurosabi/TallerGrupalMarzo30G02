@@ -3,9 +3,9 @@
 void updateUser(User* u)
 {
     printf("Nombre: ");
-    scanf("%s", u.name);
+    scanf("%s", u->name);
 
-    printf("Tipo de sangre: ");
+    printf("Tipo de sangre: \n");
     printf("1: A+\n");
     printf("2: A-\n");
     printf("3: B+\n");
@@ -16,12 +16,12 @@ void updateUser(User* u)
     printf("8: O-\n");
     int typeChoice;
     scanf("%d", &typeChoice);
-    u.type = typeChoice - 1;
+    u->type = typeChoice - 1;
 
-    u.donations = 0;
+    u->donations = 0;
 }
 
-void addUser(User mat[][MAX_COL], int* groupSizes, int cap)
+void addUser(User mat[][MAX_CAP], int* groupSizes, int cap)
 {
     User u;
     updateUser(&u);
@@ -44,32 +44,55 @@ void displayCounts(int *counts)
     {
         switch (i)
         {
+            case 0:
+                printf("A+: "); break;
             case 1:
-                print("A+: ") break;
+                printf("A-: "); break;
             case 2:
-                print("A-: ") break;
+                printf("B+: "); break;
             case 3:
-                print("B+: ") break;
+                printf("B+-: "); break;
             case 4:
-                print("B+-: ") break;
+                printf("AB+: "); break;
             case 5:
-                print("AB+: ") break;
+                printf("AB+-: "); break;
             case 6:
-                print("AB+-: ") break;
-            case 1:
-                print("O+: ") break;
-            case 1:
-                print("O-: ") break;
+                printf("O+: "); break;
+            case 7:
+                printf("O-: "); break;
         }
         printf("%d\n", counts[i]);
     }
 }
 
-//Add searchByType here
+void searchByType(User mat[][MAX_CAP], int *groupSizes)
+{
+    printf("Tipo de sangre: \n");
+    printf("1: A+\n");
+    printf("2: A-\n");
+    printf("3: B+\n");
+    printf("4: B-\n");
+    printf("5: AB+\n");
+    printf("6: AB-\n");
+    printf("7: O+\n");
+    printf("8: O-\n");
+    int typeChoice;
+    scanf("%d", &typeChoice);
+    typeChoice--;
+
+    printf("Usuarios:\n");
+    int i;
+    for (i = 0; i < groupSizes[typeChoice]; i++)
+    {
+        printf("Nombre: %s\n", mat[typeChoice][i].name);
+        printf("Total Donado: %d\n", mat[typeChoice][i].donations);
+        printf("===============\n");
+    }
+}
 
 void makeDonation(User mat[][MAX_CAP], int *counts, int cap)
 {
-    char seachName[20];
+    char searchName[20];
     printf("Nombre: ");
     scanf("%s", searchName);
 

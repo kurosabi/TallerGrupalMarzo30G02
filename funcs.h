@@ -1,20 +1,21 @@
 #include <stdio.h>
+#include <string.h>
 
-#define MAX_CAP 100;
+#define MAX_CAP 100
 
 typedef struct User User;
 typedef enum BloodType BloodType;
 
 enum BloodType
 {
-    a+,
-    a-,
-    b+,
-    b-
-    ab+,
-    ab-,
-    o+,
-    o-
+    ap,
+    am,
+    bp,
+    bm,
+    abp,
+    abm,
+    op,
+    om
 };
 
 struct User
