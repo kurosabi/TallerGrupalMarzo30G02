@@ -123,3 +123,41 @@ void makeDonation(User mat[][MAX_CAP], int *counts, int cap)
     if (!found)
         printf("No se encontro un usuario con ese nombre\n");
 }
+
+void infoDonacion(int n);    
+
+    if(n == 1){
+        printf("Puedes donarle a usarios A+ y AB+\n");
+    }
+
+    else if(n == 2){
+        printf("Puedes donarle a usarios A+, AB+, A- y AB-\n");
+    }
+
+    else if(n == 3){
+        printf("Puedes donarle a usarios B+ y AB+\n");
+    }
+
+    else if(n == 4){
+        printf("Puedes donarle a usarios B+, B-, AB+ y AB-\n");
+    }
+
+    else if(n == 5){
+        printf("Solo puedes donarle a usarios AB+\n");
+    }
+
+    else if(n == 6){
+        printf("Puedes donarle a usarios AB+ y AB-\n");
+    }
+
+    else if(n == 7){
+        printf("Puedes donarle a usarios A+, B+, AB+ y O+\n");
+    }
+
+    else if(n == 8){
+        printf("Puedes donarle a TODOS los usarios\n");
+    }
+
+    else{
+        printf("Has ingresado una opcion invalida\n");
+    }
