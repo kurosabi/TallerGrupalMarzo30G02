@@ -5,4 +5,7 @@ Funcionalidades:
   1: Añadir usuarios  
   2: Mostrar las cantidades de cada tipo de sangre  
   3: Mostrar a los usuarios por grupo de sangre  
-  4: Hacer una donacion al banco  
+  4: Hacer una donacion al banco 
+  5. información de que tipos de sangre son compatibles
+  6. imprime el mayor donador
+  
