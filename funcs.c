@@ -123,3 +123,19 @@ void makeDonation(User mat[][MAX_CAP], int *counts, int cap)
     if (!found)
         printf("No se encontro un usuario con ese nombre\n");
 }
+
+void showMaxDonation(User mat[][MAX_CAP], int *groupSizes){
+   int max, i, j, indice, subindice;
+
+   for(i = 0; i < 8; i++){
+         for(j = 0; j < groupSizes[i]; j++){
+                  if(mat[i][j].donations > max){
+               max = mat[i][j].donations;
+             indice = i;
+             subindice = j;
+          }
+      }
+   }
+   printf("La persona que mas ha hecho donaciones es: %s\n", mat[indice][subindice].name);
+   printf("Donaciones: %d\n", max);
+}
