@@ -40,7 +40,7 @@ void addUser(User mat[][MAX_CAP], int* groupSizes, int cap)
 void displayCounts(int *counts)
 {
     int i;
-    for (i = 0; i < 8; i++)
+    for (i = 0; i < GROUP; i++)
     {
         switch (i)
         {
@@ -101,7 +101,7 @@ void makeDonation(User mat[][MAX_CAP], int *counts, int cap)
     scanf("%d", &quantity);
 
     int i, j, found = 0;
-    for (i = 0; i < 8; i++)
+    for (i = 0; i < GROUP; i++)
     {
         for (j = 0; j < cap; j++)
         {
@@ -124,7 +124,7 @@ void makeDonation(User mat[][MAX_CAP], int *counts, int cap)
         printf("No se encontro un usuario con ese nombre\n");
 }
 
-void infoDonacion(int n);    
+void infoDonation(int n){    
 
     if(n == 1){
         printf("Puedes donarle a usarios A+ y AB+\n");
@@ -161,3 +161,20 @@ void infoDonacion(int n);
     else{
         printf("Has ingresado una opcion invalida\n");
     }
+}
+
+void showMaxDonation(User mat[][MAX_CAP], int *groupSizes){
+   int max, i, j, indice, subindice;
+
+   for(i = 0; i < GROUP; i++){
+        for(j = 0; j < groupSizes[i]; j++){
+            if(mat[i][j].donations > max){
+                max = mat[i][j].donations;
+                indice = i;
+                subindice = j;
+            }
+        }
+    }
+   printf("La persona que mas ha hecho donaciones es: %s\n", mat[indice][subindice].name);
+   printf("Donaciones: %d\n", max);
+}

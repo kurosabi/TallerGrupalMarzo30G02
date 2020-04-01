@@ -2,6 +2,7 @@
 #include <string.h>
 
 #define MAX_CAP 100
+#define GROUP 8
 
 typedef struct User User;
 typedef enum BloodType BloodType;
@@ -36,3 +37,5 @@ void searchByType(User mat[][MAX_CAP], int* groupSizes);
 void makeDonation(User mat[][MAX_CAP], int *counts, int cap);
 
 void infoDonation(int n);
+
+void showMaxDonation(User mat[][MAX_CAP], int *groupSizes);

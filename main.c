@@ -11,7 +11,8 @@ int menu()
     printf("3. Mostrar por grupo de sangre\n");
     printf("4. Hacer donacion\n");
     printf("5. ¿A que usuarios le puedo donar?\n");
-    printf("6. Salir\n");
+    printf("6. mostrar mayor donador\n");
+    printf("7. Salir\n");
     scanf("%d", &option);
 
     return option;
@@ -62,15 +63,19 @@ int main()
                 scanf("%d", &option2);
                 printf("\n");
                 infoDonation(option2);
+                break;
 
             case 6:
+                showMaxDonation(mat, groupSizes);
+                break;
+            case 7:
                 break;
             
             default:
                 printf("Opcion invalida\n");
                 break;
         }
-    } while (option != 5);
+    } while (option != 7);
 
     return 0;
 }
