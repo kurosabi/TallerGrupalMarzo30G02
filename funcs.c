@@ -3,7 +3,7 @@
 void updateUser(User* u)
 {
     printf("Nombre: ");
-    scanf("%s", u->name);
+    scanf("%20s", u->name);
 
     printf("Tipo de sangre: \n");
     printf("1: A+\n");
@@ -94,7 +94,7 @@ void makeDonation(User mat[][MAX_CAP], int *counts, int cap)
 {
     char searchName[20];
     printf("Nombre: ");
-    scanf("%s", searchName);
+    scanf("%19s", searchName);
 
     int quantity;
     printf("Cantidad: ");
@@ -124,8 +124,19 @@ void makeDonation(User mat[][MAX_CAP], int *counts, int cap)
         printf("No se encontro un usuario con ese nombre\n");
 }
 
-void infoDonation(int n){    
-
+void infoDonation(){    
+    int n;
+    printf("Ingrese un tipo de sangre: \n");
+                printf("1: A+\n");
+                printf("2: A-\n");
+                printf("3: B+\n");
+                printf("4: B-\n");
+                printf("5: AB+\n");
+                printf("6: AB-\n");
+                printf("7: O+\n");
+                printf("8: O-\n");
+                scanf("%d", &n);
+                printf("\n");
     if(n == 1){
         printf("Puedes donarle a usarios A+ y AB+\n");
     }
@@ -163,7 +174,7 @@ void infoDonation(int n){
     }
 }
 
-void showMaxDonation(User mat[][MAX_CAP], int *groupSizes){
+ void showMaxDonation(User mat[][MAX_CAP], int *groupSizes){
    int max, i, j, indice, subindice;
 
    for(i = 0; i < GROUP; i++){
@@ -175,6 +186,12 @@ void showMaxDonation(User mat[][MAX_CAP], int *groupSizes){
             }
         }
     }
-   printf("La persona que mas ha hecho donaciones es: %s\n", mat[indice][subindice].name);
-   printf("Donaciones: %d\n", max);
+    
+    if (indice>=0 && subindice>=0){
+        printf("La persona que mas ha hecho donaciones es: %s\n", mat[indice][subindice].name);
+        printf("Donaciones: %d\n", max); 
+    }else{
+        printf("Aun no hay mayor donador \n");
+    }
+   
 }

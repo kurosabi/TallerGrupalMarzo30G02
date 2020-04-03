@@ -36,6 +36,6 @@ void searchByType(User mat[][MAX_CAP], int* groupSizes);
 
 void makeDonation(User mat[][MAX_CAP], int *counts, int cap);
 
-void infoDonation(int n);
+void infoDonation();
 
 void showMaxDonation(User mat[][MAX_CAP], int *groupSizes);
