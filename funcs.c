@@ -1,5 +1,9 @@
 #include "funcs.h"
 
+/* En general muy bien organizado el código. Hay par comentarios para que revisen.
+En particular a nivel de estilo 
+Los enums recuerden que deberían estar con mayúscula sostenida */
+
 void updateUser(User* u)
 {
     printf("Nombre: ");
@@ -23,7 +27,7 @@ void updateUser(User* u)
 
 void addUser(User mat[][MAX_CAP], int* groupSizes, int cap)
 {
-    User u;
+    User u; // Se podría mejoar el nombre de la variable
     updateUser(&u);
 
     if (groupSizes[u.type] < cap)
@@ -42,6 +46,7 @@ void displayCounts(int *counts)
     int i;
     for (i = 0; i < GROUP; i++)
     {
+        // Este sería el lugar ideal para usar enums 
         switch (i)
         {
             case 0:
@@ -90,6 +95,7 @@ void searchByType(User mat[][MAX_CAP], int *groupSizes)
     }
 }
 
+// QUé es cap?, el nombre de esa varible no es claro. 
 void makeDonation(User mat[][MAX_CAP], int *counts, int cap)
 {
     char searchName[20];
@@ -101,6 +107,8 @@ void makeDonation(User mat[][MAX_CAP], int *counts, int cap)
     scanf("%d", &quantity);
 
     int i, j, found = 0;
+
+    //Se pueden quitar los breaks si se usan variables bandera aquí
     for (i = 0; i < GROUP; i++)
     {
         for (j = 0; j < cap; j++)
@@ -137,6 +145,8 @@ void infoDonation(){
                 printf("8: O-\n");
                 scanf("%d", &n);
                 printf("\n");
+    // Aquí podría quedar más chévere el código con un switch
+
     if(n == 1){
         printf("Puedes donarle a usarios A+ y AB+\n");
     }
